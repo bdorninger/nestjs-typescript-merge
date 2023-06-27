@@ -1,4 +1,4 @@
-## ENGEL Model Merge Tool Service API
+## Model Merge Tool Service API
 
 ### A. Endpoint Definitions
 
@@ -25,7 +25,7 @@
 
   ```
   {
-    "merged": <M>
+    "mergedModel": <M>
   }
   ```
 
