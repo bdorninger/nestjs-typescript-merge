@@ -2,15 +2,14 @@ import {
   Body,
   Controller,
   Get,
-  Param,
   Post,
   Req,
-  Request,
-  Response,
   Res,
   HttpException,
   HttpCode,
+  Header,
 } from '@nestjs/common';
+import { Request, Response } from 'express';
 
 import { AppService } from './app.service';
 import { merge, MergeOptions } from './merge-util';
@@ -21,18 +20,22 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): object {
+  async getHello(): Promise<object> {
     return this.appService.getGreeting();
+  }
+
+  @Post(`/post`)
+  async postIt(): Promise<object> {
+    return {
+      message: 'OK!',
+    };
   }
 
   @Post(`/merge`)
   @HttpCode(200)
-  public async mergeModels(
-    @Req() request: Request,
-    @Res() response: Response,
-    @Body() data: MergeDTO,
-  ): Promise<MergeResponse> {
-    console.log(`body:`, data);
+  @Header('Content-Type', 'application/json')
+  async mergeModels(@Body() data: MergeDTO): Promise<MergeResponse> {
+    console.log(`merge called with: `, data);
     let merged: EvsViewConfig = data.model;
     if (merged == null || data.snippets == null || data.options == null) {
       // to be safe check, if at least options conforms to MergeOptions
@@ -57,11 +60,12 @@ export class AppController {
       );
     }
 
-    response.headers.append('Content-Type', 'application/json');
-    return {
+    console.log('DONE....');
+
+    return Promise.resolve({
       mergedModel: merged,
       success: true,
-    };
+    });
   }
 
   private async mergeAll(

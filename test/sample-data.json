@@ -1,0 +1,113 @@
+{
+  "model": {
+    "id": "viewdata",
+    "meta": {
+      "modelId": "AirValve",
+      "modelType": "main"
+    },
+    "insertionPoint": "top",
+    "content": [
+      {
+        "viewId": "evs-panel",
+        "insertionPoint": "myId",
+        "header": [
+          {
+            "viewId": "evs-switch",
+            "name": "Air valve 1",
+            "evsModel": "nsu=http://engelglobal.com/IMM/AirValve1/;s=sv_bActivatedInSequence"
+          }
+        ],
+        "content": [
+          {
+            "viewId": "evs-input-number",
+            "position": 10,
+            "evsModel": "nsu=http://engelglobal.com/IMM/AirValve1/;s=sv_rActiveTime",
+            "content": [
+              {
+                "viewId": "evs-marker",
+                "evsModel": "nsu=http://engelglobal.com/IMM/AirValve1/;s=sv_bAirValveActiveTime"
+              }
+            ]
+          },
+          {
+            "viewId": "evs-marker",
+            "position": 20,
+            "evsModel": "nsu=http://engelglobal.com/IMM/AirValve1/;s=do_AirValve"
+          }
+        ]
+      },
+      {
+        "viewId": "evs-panel",
+        "header": [
+          {
+            "viewId": "evs-switch",
+            "name": "Air valve 2",
+            "evsModel": "nsu=http://engelglobal.com/IMM/AirValve2/;s=sv_bActivatedInSequence"
+          }
+        ],
+        "content": [
+          {
+            "viewId": "evs-input-number",
+            "evsModel": "nsu=http://engelglobal.com/IMM/AirValve2/;s=sv_rActiveTime",
+            "content": [
+              {
+                "viewId": "evs-marker",
+                "evsModel": "nsu=http://engelglobal.com/IMM/AirValve2/;s=sv_bAirValveActiveTime"
+              }
+            ]
+          },
+          {
+            "viewId": "evs-marker",
+            "evsModel": "nsu=http://engelglobal.com/IMM/AirValve2/;s=do_AirValve"
+          }
+        ]
+      },
+      {
+        "viewId": "evs-panel",
+        "insertionPoint": "myId2",
+        "header": [
+          {
+            "viewId": "evs-switch",
+            "position": 15,
+            "name": "Air valve 3",
+            "evsModel": "nsu=http://engelglobal.com/IMM/AirValve3/;s=sv_bActivatedInSequence"
+          }
+        ],
+        "content": [
+          {
+            "viewId": "evs-input-number",
+            "position": 10,
+            "insertionPoint": "myInnerId",
+            "evsModel": "nsu=http://engelglobal.com/IMM/AirValve3/;s=sv_rActiveTime",
+            "content": [
+              {
+                "viewId": "evs-marker",
+                "evsModel": "nsu=http://engelglobal.com/IMM/AirValve3/;s=sv_bAirValveActiveTime"
+              }
+            ]
+          },
+          {
+            "viewId": "evs-marker",
+            "position": 20,
+            "evsModel": "nsu=http://engelglobal.com/IMM/AirValve3/;s=do_AirValve"
+          }
+        ]
+      }
+    ]
+  },
+  "snippets": [
+    {
+      "evsModel": "mySuperDuperModel000",
+      "viewId": "input",
+      "position": 999
+    }
+  ],
+  "options": {
+    "property": "insertionPoint",
+    "value": "myId",
+    "pos": "content",
+    "index": 0,
+    "contributor": "KARL",
+    "sort": "position"
+  }
+}
