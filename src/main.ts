@@ -1,4 +1,5 @@
 import { NestFactory } from '@nestjs/core';
+import { initTestData } from 'test/test-data';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -6,3 +7,4 @@ async function bootstrap() {
   await app.listen(3000);
 }
 bootstrap();
+initTestData();
