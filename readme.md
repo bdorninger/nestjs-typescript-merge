@@ -45,6 +45,7 @@
 ```
 
 **To test it, execute this code - URL might need correction!**
+**Make sure to use the browser, which runs the stackblitz container**
 ```
 fetch('https://nestjstypescriptstarterl832rw-zszc--3000--a19575a2.local-credentialless.webcontainer.io/merge', {
   method: 'POST',
